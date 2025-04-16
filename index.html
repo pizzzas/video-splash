@@ -17,11 +17,29 @@
             height: 100%;
             object-fit: cover;
         }
+        .desktop-video {
+            display: block;
+        }
+        .mobile-video {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .desktop-video {
+                display: none;
+            }
+            .mobile-video {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
-    <video autoplay muted loop playsinline>
+    <video class="desktop-video" autoplay muted loop playsinline>
         <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video class="mobile-video" autoplay muted loop playsinline>
+        <source src="video-mobile.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </body>
